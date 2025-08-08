@@ -1,3 +1,4 @@
 node_modules
 .env
 dist/
+JWT_SECRET=675684b0281816f999aaa301634451eff5f4328d42c8d5d2f32cd414f2e05bc4e7dd0d63e5961424b3b753ed1dbfe14fb795fde48bb8bc53862c4b2deac8fb37
