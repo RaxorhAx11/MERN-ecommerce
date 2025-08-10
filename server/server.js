@@ -2,6 +2,10 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
+
+require('dotenv').config();
+
+
 const authRouter = require("./routes/auth/auth-routes");
 const adminProductsRouter = require("./routes/admin/products-routes");
 const adminOrderRouter = require("./routes/admin/order-routes");
@@ -14,11 +18,19 @@ const shopSearchRouter = require("./routes/shop/search-routes");
 const shopReviewRouter = require("./routes/shop/review-routes");
 
 const commonFeatureRouter = require("./routes/common/feature-routes");
-require('dotenv').config();
-mongoose
+
+/* mongoose
   .connect("mongodb+srv://nisargapatel09:mern123@mern1.cnqg9hc.mongodb.net/")
   .then(() => console.log("MongoDB connected"))
   .catch((error) => console.log(error));
+
+const app = express();
+const PORT = process.env.PORT || 5000; */
+
+mongoose
+  .connect(process.env.MONGODB_URI)
+  .then(() => console.log("✅ MongoDB connected"))
+  .catch((error) => console.log("❌ MongoDB connection error:", error));
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -56,7 +68,10 @@ app.use("/api/common/feature", commonFeatureRouter);
 const { upload } = require("./helpers/cloudinary");
 const { handleImageUpload } = require("./controllers/admin/products-controller");
 
+if (require.main === module) {
+  app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+}
 
+/* app.listen(PORT, () => console.log(`Server is now running on port ${PORT}`)); */
 
-app.listen(PORT, () => console.log(`Server is now running on port ${PORT}`));
-
+module.exports = app;
