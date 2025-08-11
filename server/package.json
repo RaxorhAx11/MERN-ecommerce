@@ -19,8 +19,11 @@
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.5.3",
-    "multer": "^1.4.5-lts.1",
+    "multer": "^2.0.2",
     "paypal-rest-sdk": "^1.8.1",
     "serverless-http": "^3.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
   }
 }
