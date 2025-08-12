@@ -12,7 +12,7 @@ export const registerUser = createAsyncThunk(
 
   async (formData) => {
     const response = await axios.post(
-      `${import.meta.env.VITE_REACT_APP_BACKEND_BASEUSRL}/api/auth/register`,
+      "https://mern1-2dvgansbv-raxorhax11s-projects.vercel.app/api/auth/register",
       formData,
       {
         withCredentials: true,
@@ -28,7 +28,7 @@ export const loginUser = createAsyncThunk(
 
   async (formData) => {
     const response = await axios.post(
-      `${import.meta.env.VITE_REACT_APP_BACKEND_BASEUSRL}`,
+      "https://mern1-2dvgansbv-raxorhax11s-projects.vercel.app/api/auth/login",
       formData,
       {
         withCredentials: true,
@@ -44,7 +44,7 @@ export const logoutUser = createAsyncThunk(
 
   async () => {
     const response = await axios.post(
-      `${import.meta.env.VITE_REACT_APP_BACKEND_BASEUSRL}/api/auth/logout`,
+      "https://mern1-2dvgansbv-raxorhax11s-projects.vercel.app/api/auth/logout",
       {},
       {
         withCredentials: true,
@@ -60,7 +60,7 @@ export const checkAuth = createAsyncThunk(
 
   async () => {
     const response = await axios.get(
-      `${import.meta.env.VITE_REACT_APP_BACKEND_BASEUSRL}/api/auth/check-auth`,
+      "https://mern1-2dvgansbv-raxorhax11s-projects.vercel.app/api/auth/check-auth",
       {
         withCredentials: true,
         headers: {
